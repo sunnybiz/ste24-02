@@ -1,4 +1,4 @@
-FROM maven:openjdk-17 AS builder
+FROM maven:3.8.6-eclipse-temurin-17-alpine AS builder
 
 WORKDIR /app
 COPY . /app
