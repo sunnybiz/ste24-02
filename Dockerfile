@@ -1,4 +1,4 @@
-FROM maven:3-jdk-11-openj9 AS builder
+FROM maven:openjdk-17 AS builder
 
 WORKDIR /app
 COPY . /app
