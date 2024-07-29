@@ -5,7 +5,7 @@ COPY . /app
 
 RUN mvn package
 
-FROM eclipse-temurin:17
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar /app/java-application.jar
