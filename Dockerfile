@@ -5,7 +5,7 @@ COPY . /app
 
 RUN mvn package
 
-FROM adoptopenjdk:11-jre-openj9
+FROM eclipse-temurin:17
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar /app/java-application.jar
