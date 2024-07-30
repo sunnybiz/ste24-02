@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MoveController {
     @Autowired
-    MoveService moveService;
+    public MoveService moveService;
 
     @GetMapping("/move")
     public Move move(@RequestParam(name = "field") String field) {
