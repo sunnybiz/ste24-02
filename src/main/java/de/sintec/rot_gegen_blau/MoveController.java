@@ -9,13 +9,16 @@ public class MoveController {
     MoveService moveService;
 
     @GetMapping("/move")
-    public String move(@RequestParam(name = "field") String field) {
-        return moveService.move(field);
-    }
-
-    @GetMapping("/check")
-    public String check(@RequestParam(name = "field") String field) {
-        return moveService == null ? "null" : "ok";
+    public Move move(@RequestParam(name = "field") String field) {
+        Move theMove;
+        try {
+            String nextField = moveService.move(field);
+            theMove = new Move(nextField, "success");
+        }
+        catch (Exception ex) {
+            theMove = new Move("X", ex.getMessage());
+        }
+        return theMove;
     }
 
 }

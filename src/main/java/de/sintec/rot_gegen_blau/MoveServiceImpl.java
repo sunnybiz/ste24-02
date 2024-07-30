@@ -29,7 +29,7 @@ public class MoveServiceImpl implements MoveService {
         if (lastMove == null || lastMove.equals("R")) {
             nextMove = (free % 3 == 1) ? "BB" : "B";
         }
-        else if (lastMove.equals("B")) {
+        else {
             nextMove = (free % 3 == 1) ? "RR" : "R";
         }
 
