@@ -12,4 +12,10 @@ public class MoveController {
     public String move(@RequestParam(name = "field") String field) {
         return moveService.move(field);
     }
+
+    @GetMapping("/check")
+    public String check(@RequestParam(name = "field") String field) {
+        return moveService == null ? "null" : "ok";
+    }
+
 }
