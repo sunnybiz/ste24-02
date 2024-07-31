@@ -12,9 +12,22 @@ public class MoveServiceTest {
     MoveService moveService;
 
     @Test
-    void testMove() {
+    void testMove0() {
         String nextField = moveService.move("BBRRBRoooo");
 
         Assertions.assertEquals("BBRRBRBooo", nextField);
+    }
+
+    @Test
+    void testMove1() {
+        String nextField = moveService.move("oooooo");
+
+        Assertions.assertEquals("Booooo", nextField);
+    }
+    @Test
+    void testMove2() {
+        String nextField = moveService.move("Booooo");
+
+        Assertions.assertEquals("BRRooo", nextField);
     }
 }

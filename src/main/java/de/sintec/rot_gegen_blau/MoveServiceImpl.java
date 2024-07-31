@@ -11,13 +11,13 @@ public class MoveServiceImpl implements MoveService {
         while (start.endsWith("o")) {
             free++;
             if (start.length() > 1)
-                start=start.substring(0, start.length()-2);
+                start=start.substring(0, start.length()-1);
             else
                 start="";
         }
 
         String lastMove = null;
-        String nextMove = null;
+        String nextMove;
         if (start.length() > 0)
         {
             if (start.endsWith("B"))
@@ -27,10 +27,10 @@ public class MoveServiceImpl implements MoveService {
         }
 
         if (lastMove == null || lastMove.equals("R")) {
-            nextMove = (free % 3 == 1) ? "BB" : "B";
+            nextMove = (free % 3 == 1) ? "B" : "BB";
         }
         else {
-            nextMove = (free % 3 == 1) ? "RR" : "R";
+            nextMove = (free % 3 == 1) ? "R" : "RR";
         }
 
         nextField = start + nextMove + lastField.substring(start.length() + nextMove.length());
